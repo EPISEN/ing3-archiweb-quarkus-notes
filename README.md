@@ -1,4 +1,4 @@
-# quarkus-notese project
+# quarkus-notes project
 
 This project uses Quarkus, the Supersonic Subatomic Java Framework.
 
