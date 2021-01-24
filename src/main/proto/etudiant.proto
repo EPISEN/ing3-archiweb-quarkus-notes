@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package fr.upec.episen;
+
+option java_multiple_files = true;
+option java_package = "fr.upec.episen.proto";
+
+service Etudiant{
+  rpc GetEtudiantName(EtudiantNameRequest) returns (EtudiantNameReply){}
+}
+
+message EtudiantNameRequest{
+  string ine = 1;
+}
+
+message EtudiantNameReply{
+  string name = 1;
+}
