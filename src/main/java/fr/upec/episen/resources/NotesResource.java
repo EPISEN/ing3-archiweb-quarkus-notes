@@ -3,13 +3,12 @@ package fr.upec.episen.resources;
 import fr.upec.episen.proto.EtudiantGrpc;
 import fr.upec.episen.proto.EtudiantNameRequest;
 import fr.upec.episen.resources.object.Notes;
-import io.quarkus.grpc.runtime.annotations.GrpcService;
+import io.quarkus.grpc.GrpcClient;
 
-import javax.inject.Inject;
-import javax.ws.rs.GET;
-import javax.ws.rs.Path;
-import javax.ws.rs.Produces;
-import javax.ws.rs.core.MediaType;
+import jakarta.ws.rs.GET;
+import jakarta.ws.rs.Path;
+import jakarta.ws.rs.Produces;
+import jakarta.ws.rs.core.MediaType;
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -33,8 +32,7 @@ import java.util.HashMap;
 @Path("/notes")
 public class NotesResource {
 
-    @Inject
-    @GrpcService("etudiant")
+    @GrpcClient("etudiant")
     EtudiantGrpc.EtudiantBlockingStub etudiantGrpcService;
 
     public HashMap<String,Notes> hashMap =new HashMap<String, Notes>();
